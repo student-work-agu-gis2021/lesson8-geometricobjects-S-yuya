@@ -70,9 +70,9 @@ print('dest_points length:', len(dest_points))
 
 # YOUR CODE HERE 4 to append points in orig_points and dest_points
 from shapely.geometry import Point
-for idx,d in data.iterrows():
- point_orig=Point(d[0],d[1])
- point_dest=Point(d[2],d[3])
+for idx, d in data.iterrows():
+ point_orig = Point(d[0], d[1])
+ point_dest = Point(d[2], d[3])
  orig_points.append(point_orig)
  dest_points.append(point_dest)
 # CODE FOR TESTING YOUR SOLUTION
@@ -151,7 +151,18 @@ print("Total length of all lines is", round(total_length, 2))
 # **Note: avoid using the same variable names as earlier inside your functions!** Functions are often defined at the top of the script file (or jupyter notebook), and now that we have them here at the very end you might accidentally alter an existing variable inside your functions. To avoid this, alter the variable names inside your own functions if you re-use code from this notebook. 
 
 # YOUR CODE HERE 8 to define create_od_lines() and calculate_total_distance()
+def create_od_lines(point1,point2):
+  od_lines=[]
+  for orig,dest in zip(point1,point2):
+    line=LineString([(orig.x,orig.y),(dest.x,dest.y)])
+    od_lines.append(line)
+    return od_lines
 
+def calculate_total_distance(line_string):
+  total_distance=0.0
+  for line in line_string:
+    total_distance=total_distance+line.length
+    return total_distance
 
 # CODE FOR TESTING YOUR SOLUTION
 
