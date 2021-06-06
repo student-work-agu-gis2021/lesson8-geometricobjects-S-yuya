@@ -119,7 +119,7 @@ def get_centroid(geom):
 # 
 
 #  YOUR CODE HERE 7 to define some objects
-points3=[(55.2,20.19),(140.12,-3.20),(30.0,-19.20)]
+points3=[(40.0,25.00),(148.09,-21.90),(35.9,-14.98)]
 poly1=create_poly_geom(points3)
 
 # CODE FOR TESTING YOUR SOLUTION
@@ -144,7 +144,7 @@ except Exception as e:
 # YOUR CODE HERE 8 to define get_area()
 def get_area(polygon):
   assert type(polygon)==Polygon,"Input should be a Shapely Polygon -object!"
-  return Polygon.area
+  return polygon.area
 # Test and demonstrate the usage of the function:
 get_area(poly1)
 # CODE FOR TESTING YOUR SOLUTION
@@ -168,6 +168,9 @@ except Exception as e:
 
 
 #  YOUR CODE HERE 9 to define get_length()
+def get_length(geom):
+  assert type(geom)==Polygon or type(geom)==LineString,"geom' should be either LineString or Polygon!"
+  return geom.length
 
 # Test and demonstrate the usage of the function:
 
