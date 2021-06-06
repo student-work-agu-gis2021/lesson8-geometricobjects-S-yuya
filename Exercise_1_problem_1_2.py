@@ -39,7 +39,8 @@ def create_line_geom(points):
 
 line1 = None
 # YOUR CODE HERE 3 to define two points and store the result in line1
-
+points=[(45.2,22.34),(100.22,-3.20),(70.0,10.20)]
+line1=create_line_geom(points)
 
 # CODE FOR TESTING YOUR SOLUTION
 print(line1)
