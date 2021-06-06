@@ -134,10 +134,10 @@ assert len(lines) == len(data), "There should be as many lines as there are rows
 # 
 
 # YOUR CODE HERE 7 to find total length
-
-# CODE FOR TESTING YOUR SOLUTION
-
-# This test print should print the total length of all lines
+total_length=0.0
+for line in lines:
+  total_length = total_length+line.length
+print("Total length of all lines is", round(total_length, 2))
 print("Total length of all lines is", round(total_length, 2))
 
 
