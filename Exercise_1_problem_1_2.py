@@ -74,7 +74,7 @@ except Exception as e:
 def create_poly_geom(coords):
   assert type(coords)==list,"Input should be a list!"
   assert len(coords)>=3,"Polygon object requires at least three Points!"
-  assert type(points[0])==tuple,"All list values should be coordinate tuples!"
+  assert type(points[0])==tuple,"All list values should be Shapely Point objects!"
   poly=Polygon(coords)
   return poly
 # Demonstrate the usage of the function. For example, create a Polygon with three points: `(45.2, 22.34)`, `(100.22, -3.20)` & `(70.0, 10.20)`.
@@ -112,7 +112,9 @@ except Exception as e:
 # 
 
 #  YOUR CODE HERE 6 to define get_centroid()
-
+def get_centroid(geom):
+  assert type(geom)==Point or type(geom)==LineString or type(geom)==Polygon,"Input should be a Shapely geometry!"
+  return geom.centroid
 # Test and demonstrate the usage of the function. You can, for example, create shapely objects using the functions you created in problem 1 and print out information about their centroids:
 # 
 
